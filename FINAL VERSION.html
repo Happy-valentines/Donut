@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Donut 🍩❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{
+background:linear-gradient(180deg,#ff9a9e,#fad0c4);
+overflow-x:hidden;
+color:#fff;
+text-align:center;
+}
+
+section{
+min-height:100vh;
+padding:40px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+h1{font-size:2.2rem;margin-bottom:10px}
+p{font-size:1.1rem;max-width:600px}
+
+.card{
+background:rgba(255,255,255,0.15);
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+margin-top:20px;
+}
+
+img{
+max-width:180px;
+border-radius:20px;
+margin:10px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:rise 8s linear infinite;
+}
+
+@keyframes rise{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-120vh);opacity:0}
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+font-size:1rem;
+margin:10px;
+cursor:pointer;
+}
+
+.yes{background:#ff4d6d;color:white}
+.no{background:#444;color:white;position:absolute}
+
+audio{display:none}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="iwannabeyours.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ROSE DAY -->
+<section>
+<h1>🌹 Rose Day 🌹</h1>
+<p>Every rose reminds me of your smile, soft, warm, and impossible to forget.</p>
+<div class="card">
+<img src="rose1.jpg">
+<img src="rose2.jpg">
+</div>
+</section>
+
+<!-- PROPOSE DAY -->
+<section>
+<h1>💍 Propose Day 💍</h1>
+<p>If love had a face, it would look exactly like you, my Donut 🍩</p>
+<div class="card">
+<img src="propose.jpg">
+</div>
+</section>
+
+<!-- CHOCOLATE DAY -->
+<section>
+<h1>🍫 Chocolate Day 🍫</h1>
+<p>You’re sweeter than every chocolate I’ve ever tasted — and way more addictive 🤭</p>
+<div class="card">
+<img src="chocolate.jpg">
+</div>
+</section>
+
+<!-- TEDDY DAY -->
+<section>
+<h1>🧸 Teddy Day 🧸</h1>
+<p>If I could, I’d turn into your teddy just to be hugged every night 🥺</p>
+<div class="card">
+<img src="teddy1.jpg">
+<img src="teddy2.jpg">
+</div>
+</section>
+
+<!-- PROMISE DAY -->
+<section>
+<h1>🤞 Promise Day 🤞</h1>
+<p>I promise to annoy you, protect you, love you, and choose you — always.</p>
+<div class="card">
+<img src="promise.jpg">
+</div>
+</section>
+
+<!-- HUG DAY -->
+<section>
+<h1>🤗 Hug Day 🤗</h1>
+<p>This is a virtual hug — but imagine it lasting forever 💞</p>
+<div class="card">
+<img src="hug.jpg">
+</div>
+</section>
+
+<!-- KISS DAY -->
+<section>
+<h1>💋 Kiss Day 💋</h1>
+<p>If kisses were words, I’d never stop talking to you.</p>
+<div class="card">
+<img src="kiss.jpg">
+</div>
+</section>
+
+<!-- VALENTINE DAY -->
+<section>
+<h1>❤️ Valentine’s Day ❤️</h1>
+<img src="valentine.jpg">
+
+<h1>DAMZAL (MY DONUT)</h1>
+<p>Will you be my Valentine? 🥺💞</p>
+
+<button class="yes" onclick="next()">YES 💖</button>
+<button class="no" id="no">NO 🙄</button>
+</section>
+
+<!-- AFTER YES -->
+<section id="after" style="display:none">
+<h1>I KNEW IT 💋💞</h1>
+<p>
+Ik u love me,<br>
+I LOVE UH MORE BABY GIRL 🥰🤭
+</p>
+
+<button class="yes" onclick="final()">FOR YOU 🎁</button>
+</section>
+
+<!-- FINAL PAGE -->
+<section id="final" style="display:none">
+<img src="catrose.gif">
+<div class="card">
+<p>
+I JUST REALLY WANNA SPEND MORE TIME WITH UH 💕<br><br>
+I LOVE UH MY BOO BOO, MY CUTIE PIE,<br>
+MY DONUS 🍩, MERA BACHA,<br>
+MY SUGARPLUM 💖
+</p>
+</div>
+
+<h1>Will you be my Valentine Baby Girl? ❤️</h1>
+</section>
+
+<script>
+function next(){
+document.getElementById("after").style.display="flex";
+window.scrollTo(0,document.body.scrollHeight);
+}
+function final(){
+document.getElementById("final").style.display="flex";
+window.scrollTo(0,document.body.scrollHeight);
+}
+
+const no=document.getElementById("no");
+no.addEventListener("mouseover",()=>{
+no.style.top=Math.random()*80+"vh";
+no.style.left=Math.random()*80+"vw";
+});
+
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),8000);
+},400);
+</script>
+
+</body>
+</html>
